@@ -251,7 +251,45 @@ int main(){
                                         break;
 
 																				case 5:
-																				
+						for(int l=0;l<4;l++){
+							switch(l){
+								case 1:
+									printf("Attaque dévastatrice du joueur\n");
+									printf("-%d PV\n",Rogue.Att);
+									M1.PV-=TourJeu(Choix,Rogue,j)/M1.Def;
+									printf("Point de vie du monstre :%d\n",M1.PV);
+								if (M1.PV<=0) nbMort++;
+								break;
+
+								case 2:
+									printf("Attaque dévastatrice du joueur\n");
+									printf("-%d PV\n",Rogue.Att);
+									M2.PV-=TourJeu(Choix,Rogue,j)/M2.Def;
+									printf("Point de vie du monstre :%d\n",M2.PV);
+								if (M2.PV<=0) nbMort++;
+								break;
+
+								case 3:
+									printf("Attaque dévastatrice du joueur\n");
+									printf("-%d PV\n",Rogue.Att);
+									M3.PV-=TourJeu(Choix,Rogue,j)/M3.Def;
+									printf("Point de vie du monstre :%d\n",M3.PV);
+								if (M3.PV<=0) nbMort++;
+								break;
+
+								case 4:
+									printf("Attaque dévastatrice du joueur\n");
+									printf("-%d PV\n",Rogue.Att);
+									M4.PV-=TourJeu(Choix,Rogue,j)/M4.Def;
+									printf("Point de vie du monstre :%d\n",M4.PV);
+								if (M4.PV<=0) nbMort++;
+								break;
+							}
+						}
+
+						k++;
+						break;
+
 
 							}
 						}
