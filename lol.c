@@ -91,12 +91,14 @@ int main(){
 	int i;
 	int j;
 	int k=0;
+
 	printf("%d\n",Choix);
 	printf("Point de vie du monstre :%d\n",M1.PV);
 	printf("Point de vie du Tank :%d\n",Tank.PV);
     printf("Point de vie du Healer :%d\n",Tank.PV);
     printf("Point de vie du Rogue :%d\n",Tank.PV);
 	for(i=1;i<=3;i++){
+		int nbMort=0;
 		do{
 			for(j=1;j<=3;j++){
 					switch(j){
