@@ -93,7 +93,6 @@ int main(){
 	int MPM;
 
 	printf("%d\n",Choix);
-	printf("Point de vie du monstre :%d\n",M1.PV);
 	printf("Point de vie du Tank :%d\n",Tank.PV);
     printf("Point de vie du Healer :%d\n",Tank.PV);
     printf("Point de vie du Rogue :%d\n",Tank.PV);
@@ -368,13 +367,6 @@ int main(){
 									printf("Point de vie du monstre 4:%d\n",M4.PV);
 								if (M4.PV<=0) nbMort++;
 								break;
-							}
-						}
-
-						k++;
-						break;
-
-
 							}
 						}
 
