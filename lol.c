@@ -148,7 +148,7 @@ int main(){
 
 										case 5:
 
-										for(int o=0;o<4;o++){
+										for(int o=1;o<4;o++){
 											 switch(o){
 												 case 1:
 													printf("Défence du joueur augmenté\n");
@@ -227,7 +227,7 @@ int main(){
                                         Healer.isTox=0;
 																				break;
 																				case 5:
-																						 for(int n=0;n<4;n++){
+																						 for(int n=1;n<4;n++){
 																							 switch(n){
 																								 case 1:
 																									printf("Joueur est soigné\n");
@@ -317,13 +317,13 @@ int main(){
                                         break;
 
 																				case 5:
-						for(int l=0;l<4;l++){
+						for(int l=1;l<=4;l++){
 							switch(l){
 								case 1:
 									printf("Attaque dévastatrice du joueur\n");
 									printf("-%d PV\n",Rogue.Att);
 									M1.PV-=TourJeu(Choix,Rogue,j)/M1.Def;
-									printf("Point de vie du monstre :%d\n",M1.PV);
+									printf("Point de vie du monstre 1:%d\n",M1.PV);
 								if (M1.PV<=0) nbMort++;
 								break;
 
@@ -331,7 +331,7 @@ int main(){
 									printf("Attaque dévastatrice du joueur\n");
 									printf("-%d PV\n",Rogue.Att);
 									M2.PV-=TourJeu(Choix,Rogue,j)/M2.Def;
-									printf("Point de vie du monstre :%d\n",M2.PV);
+									printf("Point de vie du monstre 2:%d\n",M2.PV);
 								if (M2.PV<=0) nbMort++;
 								break;
 
@@ -339,7 +339,7 @@ int main(){
 									printf("Attaque dévastatrice du joueur\n");
 									printf("-%d PV\n",Rogue.Att);
 									M3.PV-=TourJeu(Choix,Rogue,j)/M3.Def;
-									printf("Point de vie du monstre :%d\n",M3.PV);
+									printf("Point de vie du monstre 3:%d\n",M3.PV);
 								if (M3.PV<=0) nbMort++;
 								break;
 
@@ -347,7 +347,7 @@ int main(){
 									printf("Attaque dévastatrice du joueur\n");
 									printf("-%d PV\n",Rogue.Att);
 									M4.PV-=TourJeu(Choix,Rogue,j)/M4.Def;
-									printf("Point de vie du monstre :%d\n",M4.PV);
+									printf("Point de vie du monstre 4:%d\n",M4.PV);
 								if (M4.PV<=0) nbMort++;
 								break;
 							}
