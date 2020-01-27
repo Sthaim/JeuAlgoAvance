@@ -36,7 +36,6 @@ int TourJeu(int NAction, joueur lol, int IndexP){
 	switch(NAction){
 		case 1:
 			return lol.Att;
-			lol.Def=1;
 			break;
 
 		case 2:
@@ -46,12 +45,10 @@ int TourJeu(int NAction, joueur lol, int IndexP){
 
 		case 3:
 			return 1;
-			lol.Def=1;
 			break;
 
 		case 4:
 			lol.isTox=0;
-			lol.Def=1;
 			return 0;
 			break;
 	}
@@ -62,7 +59,6 @@ int TourJeuM(int NAction, monster lol, int IndexM){
 	switch(NAction){
 		case 1:
 			return lol.Att;
-			lol.Def=1;
 			break;
 
 		case 2:
@@ -72,12 +68,10 @@ int TourJeuM(int NAction, monster lol, int IndexM){
 
 		case 3:
 			return 1;
-			lol.Def=1;
 			break;
 
 		case 4:
 			lol.isTox=0;
-			lol.Def=1;
 			return 0;
 			break;
 	}
@@ -253,6 +247,7 @@ int main(){
 					switch(j){
 	          case 1:
 							printf("Tour du tank \n");
+							Tank.Def=1;
               k=0;
               while(k!=1){
 								printf("Choisir entre attaque(1)/defense(2)/Sort de poison(3) et Antidote(4)\n");
@@ -309,6 +304,7 @@ int main(){
 						case 2:
               k=0;
 							printf("Tour du Healer \n");
+							Healer.Def=1;
               while(k!=1){
                   printf("Choisir entre attaque(1)/defense(2)/Sort de poison(3) et Antidote(4)\n");
                   scanf("%d",&Choix);
@@ -364,6 +360,7 @@ int main(){
 						case 3:
               k=0;
 							printf("Tour du Rogue \n");
+							Rogue.Def=1;
               while(k!=1){
                   printf("Choisir entre attaque(1)/defense(2)/Sort de poison(3) et Antidote(4)\n");
                   scanf("%d",&Choix);
@@ -439,57 +436,57 @@ int main(){
 				}
 
 				if(cible.PV>0){
-	                joueur Agro;
-	                switch(rand()%3+1){
-	                    case 1:
-	                        Agro=Tank;
-	                        break;
-	                    case 2:
-	                        Agro=Healer;
-	                        break;
-	                    case 3:
-	                        Agro=Rogue;
-	                        break;
-	                }
-	                while(k!=1){
-	                    Choix=rand()%4+1;
-	                    while(cible.MP<=0 && Choix==3){
-	                        Choix=rand()%3+1;
-	                    }
-	                    switch (Choix){
+          joueur Agro;
+          switch(rand()%3+1){
+              case 1:
+                  Agro=Tank;
+                  break;
+              case 2:
+                  Agro=Healer;
+                  break;
+              case 3:
+                  Agro=Rogue;
+                  break;
+          }
+          while(k!=1){
+              Choix=rand()%4+1;
+              while(cible.MP<=0 && Choix==3){
+                  Choix=rand()%3+1;
+              }
+              switch (Choix){
 
-	                        case 1:
-	                            printf("Attaque puissante du Monstre\n");
-	                            printf("-%d PV\n",cible.Att);
-	                            Agro.PV-=TourJeuM(Choix,M1,0)/Agro.Def;
-	                            printf("Point de vie du %c:%d\n",Agro.Nom,cible.PV);
-	                            k++;
-	                            break;
+                  case 1:
+                      printf("Attaque puissante du Monstre\n");
+                      printf("-%d PV\n",cible.Att);
+                      Agro.PV-=TourJeuM(Choix,M1,0)/Agro.Def;
+                      printf("Point de vie du %c:%d\n",Agro.Nom,cible.PV);
+                      k++;
+                      break;
 
-	                        case 2:
-	                            TourJeuM(Choix,cible,0);
-	                            k++;
-	                            break;
+                  case 2:
+                      TourJeuM(Choix,cible,0);
+                      k++;
+                      break;
 
-	                        case 3:
-	                            if(cible.MP<=0){
-	                                break;
-	                            }
-	                            else {
-	                                cible.MP-=2;
-	                                Agro.isTox=1;
-	                                k++;
-	                                break;
-	                            }
-	                            break;
+                  case 3:
+                      if(cible.MP<=0){
+                          break;
+                      }
+                      else {
+                          cible.MP-=2;
+                          Agro.isTox=1;
+                          k++;
+                          break;
+                      }
+                      break;
 
-	                        case 4:
-	                            cible.isTox=0;
-	                            k++;
-	                            break;
-	                    }
-	                }
-	            }
+                  case 4:
+                      cible.isTox=0;
+                      k++;
+                      break;
+              }
+	         }
+	        }
 
 					if(cible.isTox==1){
 						printf("Le poison inflige -5 au monstre %d\n",cible.ID);
