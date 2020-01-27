@@ -86,11 +86,11 @@ int main(){
 	joueur Tank={150,150,10,10,0,10,1,0,10,1,1,"Tank"};
 	joueur Healer={100,100,30,30,0,5,1,0,10,1,2,"Healer"};
 	joueur Rogue={50,50,20,20,0,15,1,0,10,1,3,"Rogue"};
-	monster M1={50,10,10,0,5,1,1};
 	int Choix;
 	int i;
 	int j;
 	int k=0;
+	int MPM;
 
 	printf("%d\n",Choix);
 	printf("Point de vie du monstre :%d\n",M1.PV);
@@ -98,7 +98,23 @@ int main(){
     printf("Point de vie du Healer :%d\n",Tank.PV);
     printf("Point de vie du Rogue :%d\n",Tank.PV);
 	for(i=1;i<=3;i++){
+		MPM=rand()%15+5;
+		monster M1={rand()%100+25,MPM,MPM,0,rand()%10+5,1,1};
+		printf("Point de vie du monstre %d:%d\n",M1.ID,M1.PV);
+		MPM=rand()%15+5;
+		monster M2={rand()%100+25,MPM,MPM,0,rand()%10+5,1,2};
+		printf("Point de vie du monstre %d:%d\n",M2.ID,M2.PV);
+		MPM=rand()%15+5;
+		monster M3={rand()%100+25,MPM,MPM,0,rand()%10+5,1,3};
+		printf("Point de vie du monstre %d:%d\n",M3.ID,M3.PV);
+		MPM=rand()%15+5;
+		monster M4={rand()%100+25,MPM,MPM,0,rand()%10+5,1,4};
+		printf("Point de vie du monstre %d:%d\n",M4.ID,M4.PV);
 		int nbMort=0;
+		printf("Point de vie du monstre 1 :%d\n",M1.PV);
+		printf("Point de vie du monstre 2 :%d\n",M2.PV);
+		printf("Point de vie du monstre 3 :%d\n",M3.PV);
+		printf("Point de vie du monstre 4 :%d\n",M4.PV);
 		do{
 			for(j=1;j<=3;j++){
 					switch(j){
