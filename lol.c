@@ -165,7 +165,7 @@ monster choixCible(int index,monster M1,monster M2, monster M3, monster M4){
 			break;
 
 		case 3:
-			printf("Choisir entre le monstre 1, le monstre 2 et le monstre 3\n");
+			printf("Choisir entre le monstre 1, le monstre 2, le monstre 3 et le monstre 4\n");
 			scanf("%d",&selection);
 			while(l!=1){
 				switch(selection){
