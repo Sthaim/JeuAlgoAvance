@@ -142,8 +142,39 @@ int main(){
 
 									case 4:
 										Tank.isTox=0;
+
 										k++;
 										break;
+
+										case 5:
+
+										for(int o=0;o<4;o++){
+											 switch(o){
+												 case 1:
+													printf("Défence du joueur augmenté\n");
+													printf("8 Def\n");
+													Tank.Def+=TourJeu(Choix,Tank,n)/Tank.Def;
+													printf("Point de défence du Tank :%d\n",Tank.Def);
+												break;
+
+												case 2:
+													printf("Défence du joueur augmenté\n");
+													printf("8 Def\n");
+													Healer.Def+=TourJeu(Choix,Tank,n)/Healer.Def;
+													printf("Point de défence du Healer :%d\n",Healer.Def);
+												break;
+
+												case 3:
+													printf("Défence du joueur augmenté\n");
+													printf("8 Def\n");
+													Rogue.Def+=TourJeu(Choix,Tank,n)/Rogue.Def;
+													printf("Point de défence du Rogue :%d\n",Rogue.Def);
+												break;
+
+												}
+										}
+									k++;
+									break;
 								}
 							}
                             if(Tank.isTox==1){
