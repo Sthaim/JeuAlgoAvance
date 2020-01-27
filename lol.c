@@ -153,21 +153,21 @@ int main(){
 												 case 1:
 													printf("Défence du joueur augmenté\n");
 													printf("8 Def\n");
-													Tank.Def+=TourJeu(Choix,Tank,n)/Tank.Def;
+													Tank.Def=8;
 													printf("Point de défence du Tank :%d\n",Tank.Def);
 												break;
 
 												case 2:
 													printf("Défence du joueur augmenté\n");
 													printf("8 Def\n");
-													Healer.Def+=TourJeu(Choix,Tank,n)/Healer.Def;
+													Healer.Def=8;
 													printf("Point de défence du Healer :%d\n",Healer.Def);
 												break;
 
 												case 3:
 													printf("Défence du joueur augmenté\n");
 													printf("8 Def\n");
-													Rogue.Def+=TourJeu(Choix,Tank,n)/Rogue.Def;
+													Rogue.Def=8;
 													printf("Point de défence du Rogue :%d\n",Rogue.Def);
 												break;
 
@@ -234,7 +234,7 @@ int main(){
 																									printf("15 PV\n");
 																									Tank.PV+=TourJeu(Choix,Healer,n)/Tank.Def;
 																									printf("Point de vie du Tank :%d\n",Tank.PV);
-																									if (PVMax > 150);
+																									if (Tank.PVMax > 150) Tank.PV=150;
 																								break;
 
 																								case 2:
@@ -242,7 +242,7 @@ int main(){
 																									printf("15 PV\n");
 																									Healer.PV+=TourJeu(Choix,Healer,n)/Healer.Def;
 																									printf("Point de vie du Healer :%d\n",Healer.PV);
-																									if (PVMax > 100);
+																									if (Healer.PVMax > 100) Healer.PV=100;
 																								break;
 
 																								case 3:
@@ -250,7 +250,7 @@ int main(){
 																									printf("15 PV\n");
 																									Rogue.PV+=TourJeu(Choix,Healer,n)/Rogue.Def;
 																									printf("Point de vie du Rogue :%d\n",Rogue.PV);
-																									if (PVMax > 50);
+																									if (Rogue.PVMax > 50) Rogue.PV=50;
 																								break;
 
 
