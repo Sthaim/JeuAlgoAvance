@@ -194,8 +194,43 @@ int main(){
                                         break;
                                     case 4:
                                         Healer.isTox=0;
-										k++;
-                                        break;
+																				break;
+																				case 5:
+																						 for(int n=0;n<4;n++){
+																							 switch(n){
+																								 case 1:
+																									printf("Joueur est soigné\n");
+																									printf("15 PV\n");
+																									Tank.PV+=TourJeu(Choix,Healer,n)/Tank.Def;
+																									printf("Point de vie du Tank :%d\n",Tank.PV);
+																									if (PVMax > 150);
+																								break;
+
+																								case 2:
+																									printf("Joueur est soigné\n");
+																									printf("15 PV\n");
+																									Healer.PV+=TourJeu(Choix,Healer,n)/Healer.Def;
+																									printf("Point de vie du Healer :%d\n",Healer.PV);
+																									if (PVMax > 100);
+																								break;
+
+																								case 3:
+																									printf("Joueur est soigné\n");
+																									printf("15 PV\n");
+																									Rogue.PV+=TourJeu(Choix,Healer,n)/Rogue.Def;
+																									printf("Point de vie du Rogue :%d\n",Rogue.PV);
+																									if (PVMax > 50);
+																								break;
+
+
+
+
+																								}
+																							}
+
+																					k++;
+																					break;
+
                                 }
                             }
                             if(Healer.isTox==1){
