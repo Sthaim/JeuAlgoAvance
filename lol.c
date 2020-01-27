@@ -38,17 +38,17 @@ int TourJeu(int NAction, joueur lol, int IndexP){
 			return lol.Att;
 			lol.Def=1;
 			break;
-		
+
 		case 2:
 			lol.Def=4;
 			return 0;
 			break;
-		
+
 		case 3:
 			return 1;
 			lol.Def=1;
 			break;
-		
+
 		case 4:
 			lol.isTox=0;
 			lol.Def=1;
@@ -64,17 +64,17 @@ int TourJeuM(int NAction, monster lol, int IndexM){
 			return lol.Att;
 			lol.Def=1;
 			break;
-		
+
 		case 2:
 			lol.Def=4;
 			return 0;
 			break;
-		
+
 		case 3:
 			return 1;
 			lol.Def=1;
 			break;
-		
+
 		case 4:
 			lol.isTox=0;
 			lol.Def=1;
@@ -111,7 +111,7 @@ int main(){
 										printf("Choisir entre attaque(1)/defense(2)/Sort de poison(3) et Antidote(4)[Boucle]\n");
 										scanf("%d",&Choix);
 										break;
-								
+
 									case 1:
 										printf("Attaque puissante du joueur\n");
 										printf("-%d PV\n",Tank.Att);
@@ -119,13 +119,13 @@ int main(){
 										printf("Point de vie du monstre :%d\n",M1.PV);
 										k++;
 										break;
-										
-									
+
+
 									case 2:
 										TourJeu(Choix,Tank,j);
 										k++;
 										break;
-										
+
 									case 3:
 										if(Tank.MP<=0){
 											printf("Pas assez de mana\n");
@@ -139,7 +139,7 @@ int main(){
 											k++;
 											break;
 										}
-									
+
 									case 4:
 										Tank.isTox=0;
 										k++;
@@ -152,7 +152,7 @@ int main(){
                                 printf("Point de vie du %c :%d\n",Tank.Nom,Tank.PV);
                             }
 							break;
-						
+
 						case 2:
                             k=0;
 							printf("Tour du Healer");
@@ -204,7 +204,7 @@ int main(){
                                 printf("Point de vie du %c :%d\n",Healer.Nom,Healer.PV);
                             }
                             break;
-                            
+
 						case 3:
                             k=0;
 							printf("Tour du Rogue");
@@ -249,6 +249,17 @@ int main(){
                                         Rogue.isTox=0;
 										k++;
                                         break;
+
+																				case 5:
+																				
+
+							}
+						}
+
+						k++;
+						break;
+
+
                                 }
                             }
                             if(Rogue.isTox==1){
@@ -258,9 +269,9 @@ int main(){
                             }
 							break;
                     }
-						
+
             }
-			
+
 			if(M1.PV>0){
                 joueur Agro;
                 switch(rand()%3+1){
@@ -314,7 +325,7 @@ int main(){
                             break;
                     }
                 }
-            }    
+            }
 			if(M1.isTox==1){
 				printf("Le poison inflige -5 au monstre\n");
 				M1.PV-=5;
