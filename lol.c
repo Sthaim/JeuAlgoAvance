@@ -96,6 +96,7 @@ int main(){
 	printf("Point de vie du Tank :%d\n",Tank.PV);
     printf("Point de vie du Healer :%d\n",Tank.PV);
     printf("Point de vie du Rogue :%d\n",Tank.PV);
+	
 	for(i=1;i<=3;i++){
 		MPM=rand()%15+5;
 		monster M1={rand()%100+25,MPM,MPM,0,rand()%10+5,1,1};
@@ -385,6 +386,36 @@ int main(){
                     }
 
             }
+	
+	
+function prendXP(){
+	printf("Tous les joueurs prennet 10 XP");
+	Tank.XP+=10;
+	if(Tank.XP>=Tank.XPMax){
+		Tank.XP-=Tank.XPMax;
+		Tank.lvl++;
+		printf("Lvl up! Le joueur gagne un niveau");
+	}
+	
+	Healer.XP+=10;
+	if(Healer.XP>=Healer.XPMax){
+		Healer.XP-=Healer.XPMax;
+		Healer.lvl++;
+		printf("Lvl up! Le joueur gagne un niveau");
+	}
+
+	Rogue.XP+=10;
+	if(Rogue.XP>=Rogue.XPMax){
+		Rogue.XP-=Rogue.XPMax;
+		Rogue.lvl++;
+		printf("Lvl up! Le joueur gagne un niveau");
+	}
+}
+
+monster==ded? prendXP();
+	
+	
+	
 
 			if(M1.PV>0){
                 joueur Agro;
